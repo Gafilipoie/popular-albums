@@ -1,6 +1,7 @@
 import React from "react";
 import { albumsMock } from "../../mocks";
 import { AlbumList, NewSongForm } from "./components";
+import { incrementVote } from './helpers';
 import "./Albums.css";
 
 class Albums extends React.PureComponent {
@@ -11,11 +12,16 @@ class Albums extends React.PureComponent {
     };
   }
 
+  handleOnVote = (id) => {
+    const { albums } = this.state;
+    this.setState({ albums: incrementVote(id, albums) });
+  }
+
   render() {
     const { albums } = this.state;
     return (
       <div>
-        <AlbumList list={albums} />
+        <AlbumList list={albums} onVote={this.handleOnVote} />
         <NewSongForm />
       </div>
     );
