@@ -31,3 +31,7 @@
   border-radius: 50%;
   vertical-align: middle;
 }
+
+.icon-remove {
+  color: grey;
+}

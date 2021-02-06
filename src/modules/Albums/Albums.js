@@ -1,7 +1,7 @@
 import React from "react";
 import { albumsMock } from "../../mocks";
 import { AlbumList, NewSongForm } from "./components";
-import { incrementVote, getMaxIdValue, checkHasErrors } from "./helpers";
+import { incrementVote, deleteAlbum, getMaxIdValue, checkHasErrors } from "./helpers";
 import "./Albums.css";
 
 class Albums extends React.PureComponent {
@@ -25,6 +25,11 @@ class Albums extends React.PureComponent {
     const { albums } = this.state;
     this.setState({ albums: incrementVote(id, albums) });
   };
+
+  handleOnDelete = id => {
+    const { albums } = this.state;
+    this.setState({ albums: deleteAlbum(id, albums) });
+  }
 
   handeOnChange = (type, event) => {
     this.setState(prevState => ({
@@ -70,7 +75,7 @@ class Albums extends React.PureComponent {
     const { albums, form, errors } = this.state;
     return (
       <div>
-        <AlbumList list={albums} onVote={this.handleOnVote} />
+        <AlbumList list={albums} onVote={this.handleOnVote} onDelete={this.handleOnDelete} />
         <NewSongForm
           form={form}
           errors={errors}

@@ -1,9 +1,10 @@
 import React from 'react';
+import Icon from '../icon';
 import './UpVote.css';
 
 const UpVote = ({ votes, onClick }) => (
   <div className="styledUpVote">
-    <i className="icon-caret-up" onClick={onClick}></i>
+    <Icon className="icon-caret-up" onClick={onClick} />
     <span className="votes">{votes}</span>
   </div>
 );

@@ -1,9 +1,10 @@
 import React from 'react';
 import { usersMock } from '../../mocks';
+import Icon from '../icon';
 import UpVote from '../upVote';
 import './Album.css';
 
-const Album = ({ song, onVote }) => {
+const Album = ({ song, onVote, onDelete }) => {
   const { id, votes, albumName, brandName, releaseYear, albumCoverUrl, submittedBy } = song;
   return (
   <div className="styledAlbum">
@@ -21,6 +22,7 @@ const Album = ({ song, onVote }) => {
         <img src={usersMock[submittedBy].avatar} alt="" />
       </div>
     </div>
+    <Icon className="icon-remove" onClick={() => onDelete(id)} />
   </div>
 )};
 
