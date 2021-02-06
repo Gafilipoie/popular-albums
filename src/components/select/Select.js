@@ -11,7 +11,7 @@ const Select = ({
 }) => (
   <span className={`styledSelect ${className}`}>
     <select value={value} {...otherProps}>
-      <option value="" disabled>
+      <option className="default-option" value="" disabled hidden>
         {placeholder}
       </option>
       {Object.keys(options).length
