@@ -12,7 +12,7 @@ const albumsMock = [
   {
     id: 101,
     votes: 1,
-    albumName: 'Calm Piano Music & Guitar Music with Birds Singing',
+    albumName: 'Calm Piano Music',
     brandName: 'Beautiful Relaxing Music',
     releaseYear: '2018',
     albumCoverUrl: 'https://picsum.photos/90',
