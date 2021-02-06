@@ -1,7 +1,8 @@
 import React from "react";
 import { albumsMock } from "../../mocks";
 import { AlbumList, NewSongForm } from "./components";
-import { incrementVote, deleteAlbum, getMaxIdValue, checkHasErrors } from "./helpers";
+import { initialFormState } from './constants';
+import { incrementVote, createAlbum, deleteAlbum, buildErrorState, checkHasErrors } from "./helpers";
 import "./Albums.css";
 
 class Albums extends React.PureComponent {
@@ -9,14 +10,7 @@ class Albums extends React.PureComponent {
     super();
     this.state = {
       albums: albumsMock,
-      form: {
-        albumName: "",
-        brandName: "",
-        releaseYear: "",
-        albumCoverUrl: "",
-        moreInfoUrl: "",
-        submittedBy: ""
-      },
+      form: initialFormState,
       errors: {}
     };
   }
@@ -42,13 +36,7 @@ class Albums extends React.PureComponent {
 
   validateForm = () => {
     const { form } = this.state;
-    const errors = {
-      albumName: form.albumName ? "" : "Album Name is required!",
-      brandName: form.brandName ? "" : "Brand Name is required!",
-      releaseYear: form.releaseYear ? "" : "Release Year is required!",
-      moreInfoUrl: form.moreInfoUrl ? "" : "More Info URL is required!",
-      submittedBy: form.submittedBy ? "" : "Submitted by is required!"
-    };
+    const errors = buildErrorState(form);
     const hasErrors = checkHasErrors(errors);
     if (!hasErrors) {
       this.addAlbum();
@@ -58,17 +46,9 @@ class Albums extends React.PureComponent {
 
   addAlbum = () => {
     const { albums, form } = this.state;
-    const newAlbum = {
-      id: getMaxIdValue(albums) + 1,
-      votes: 1,
-      albumName: form.albumName,
-      brandName: form.brandName,
-      releaseYear: form.releaseYear,
-      albumCoverUrl: form.albumCoverUrl,
-      moreInfoUrl: form.moreInfoUrl,
-      submittedBy: form.submittedBy
-    };
-    this.setState({ albums: [...albums, newAlbum] });
+    this.setState({
+      albums: [...albums, createAlbum(form, albums)]
+    });
   };
 
   render() {
