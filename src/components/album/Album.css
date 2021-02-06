@@ -1,0 +1,33 @@
+.styledAlbum {
+  display: flex;
+}
+
+.albumCoverUrl {
+  margin-right: 24px;
+}
+
+.details .details-info {
+  margin: 8px 0;
+}
+
+.details .details-info .albumName {
+  color: blue;
+  font-weight: bold;
+}
+
+.details .details-info .brandName {
+  font-weight: bold;
+}
+
+.details .details-by {
+  color: grey;
+}
+
+.details .details-by span{
+  margin-right: 8px;
+}
+
+.details .details-by img{
+  border-radius: 50%;
+  vertical-align: middle;
+}

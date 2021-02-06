@@ -1,18 +1,27 @@
 import React from 'react';
+import { usersMock } from '../../mocks';
 import UpVote from '../upVote';
+import './Album.css';
 
-const Album = ({ albumName, brandName, releaseYear, submittedBy }) => (
+const Album = ({ song }) => {
+  const { albumName, brandName, releaseYear, albumCoverUrl, submittedBy } = song;
+  return (
   <div className="styledAlbum">
     <div className="albumCoverUrl">
-      <img src="" alt="" />
+      <img src={albumCoverUrl} alt="" />
     </div>
     <div className="details">
       <UpVote votes={1} onClick={() => console.log('You voted!')} />
-      <p>{albumName}</p>
-      <p>{brandName}, {releaseYear}</p>
-      <p>Submitted by: {submittedBy}</p>
+      <div className="details-info">
+        <div className="albumName">{albumName}</div>
+        <div className="brandName">{brandName}, {releaseYear}</div>
+      </div>
+      <div className="details-by">
+        <span>Submitted by:</span>
+        <img src={usersMock[submittedBy].avatar} alt="" />
+      </div>
     </div>
   </div>
-);
+)};
 
 export default Album;

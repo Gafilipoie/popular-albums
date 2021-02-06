@@ -1,0 +1,10 @@
+.styledUpVote .icon-caret-up {
+  margin-right: 6px;
+  color: blue;
+  font-size: 22px;
+}
+
+.styledUpVote .votes {
+  font-size: 22px;
+  font-weight: bold;
+}
