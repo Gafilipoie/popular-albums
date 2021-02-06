@@ -7,3 +7,10 @@ export const incrementVote = (id, albums) =>
     acc.push(album);
     return acc;
   }, []);
+
+export const getMaxIdValue = albums => albums.reduce(
+  (value, { id }) => (id > value ? id : value),
+  0
+);
+
+export const checkHasErrors = errors => Object.keys(errors).some(key => errors[key]);

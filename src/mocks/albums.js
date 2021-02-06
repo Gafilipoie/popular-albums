@@ -1,6 +1,6 @@
 const albumsMock = [
   {
-    id: '100',
+    id: 100,
     votes: 1,
     albumName: 'albumName1',
     brandName: 'brandName1',
@@ -10,7 +10,7 @@ const albumsMock = [
     submittedBy: '10',
   },
   {
-    id: '101',
+    id: 101,
     votes: 1,
     albumName: 'albumName2',
     brandName: 'brandName2',
@@ -20,7 +20,7 @@ const albumsMock = [
     submittedBy: '20',
   },
   {
-    id: '102',
+    id: 102,
     votes: 1,
     albumName: 'albumName3',
     brandName: 'brandName3',
@@ -30,7 +30,7 @@ const albumsMock = [
     submittedBy: '30',
   },
   {
-    id: '103',
+    id: 103,
     votes: 1,
     albumName: 'albumName4',
     brandName: 'brandName4',
@@ -40,7 +40,7 @@ const albumsMock = [
     submittedBy: '10',
   },
   {
-    id: '104',
+    id: 104,
     votes: 1,
     albumName: 'albumName5',
     brandName: 'brandName5',

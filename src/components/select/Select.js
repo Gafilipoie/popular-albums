@@ -1,11 +1,18 @@
-import React from 'react';
+import React from "react";
+import './Select.css';
 
-const Select = ({ placeholder }) => (
-  <select>
-    <option value="">{placeholder}</option>
-    <option value="option1">Option 1</option>
-    <option value="option2">Option 2</option>
-  </select>
+const Select = ({ className, value, placeholder, options, error, ...otherProps }) => (
+  <span className={`styledSelect ${className}`}>
+    <select value={value} {...otherProps} >
+      <option value="" disabled>
+        {placeholder}
+      </option>
+      {Object.keys(options).map(key => (
+        <option key={options[key].id} value={options[key].id}>{options[key].username}</option>
+      ))}
+    </select>
+    {error && <span className="select-error">{error}</span>}
+  </span>
 );
 
 export default Select;
