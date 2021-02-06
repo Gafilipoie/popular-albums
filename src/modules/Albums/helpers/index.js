@@ -17,7 +17,7 @@ export const createAlbum = (form, albums) => ({
   albumName: form.albumName,
   brandName: form.brandName,
   releaseYear: form.releaseYear,
-  albumCoverUrl: form.albumCoverUrl,
+  albumCoverUrl: form.albumCoverUrl || 'http://via.placeholder.com/100',
   moreInfoUrl: form.moreInfoUrl,
   submittedBy: form.submittedBy
 });

@@ -1,9 +1,10 @@
 import React, { memo } from "react";
 import { Album } from "../../../../components";
+import './AlbumList.css';
 
 const AlbumList = ({ className, list, onVote, onDelete }) => {
   return (
-    <div className={className}>
+    <div className="albumList">
       {list.length
         ? list.map(song => (
             <Album

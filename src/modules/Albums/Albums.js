@@ -64,7 +64,6 @@ class Albums extends React.PureComponent {
         <div className="container">
           <h1 className="title">Popular Metal Albums</h1>
           <AlbumList
-            className="albumList"
             list={albums}
             onVote={this.handleOnVote}
             onDelete={this.handleOnDelete}
