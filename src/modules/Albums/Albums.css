@@ -1,0 +1,24 @@
+.styledAlbums {
+  padding: 12px 0;
+}
+
+.styledAlbums .container {
+  width: 418px;
+  margin: 0px auto;
+  padding: 16px;
+  border-radius: 38px;
+  border: 1px solid #80808030;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px #80808030;
+}
+
+.styledAlbums .container .title {
+  margin-bottom: 45px;
+  font-size: 28px;
+  text-align: center;
+  border-bottom: 1px solid #80808030;
+}
+
+.styledAlbums .container .albumList {
+  margin-bottom: 38px;
+}

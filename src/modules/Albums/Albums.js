@@ -1,8 +1,14 @@
 import React from "react";
 import { albumsMock } from "../../mocks";
 import { AlbumList, NewSongForm } from "./components";
-import { initialFormState } from './constants';
-import { incrementVote, createAlbum, deleteAlbum, buildErrorState, checkHasErrors } from "./helpers";
+import { initialFormState } from "./constants";
+import {
+  incrementVote,
+  createAlbum,
+  deleteAlbum,
+  buildErrorState,
+  checkHasErrors
+} from "./helpers";
 import "./Albums.css";
 
 class Albums extends React.PureComponent {
@@ -23,7 +29,7 @@ class Albums extends React.PureComponent {
   handleOnDelete = id => {
     const { albums } = this.state;
     this.setState({ albums: deleteAlbum(id, albums) });
-  }
+  };
 
   handeOnChange = (type, event) => {
     this.setState(prevState => ({
@@ -54,14 +60,22 @@ class Albums extends React.PureComponent {
   render() {
     const { albums, form, errors } = this.state;
     return (
-      <div>
-        <AlbumList list={albums} onVote={this.handleOnVote} onDelete={this.handleOnDelete} />
-        <NewSongForm
-          form={form}
-          errors={errors}
-          handeOnChange={this.handeOnChange}
-          handleOnSubmit={this.validateForm}
-        />
+      <div className="styledAlbums">
+        <div className="container">
+          <h1 className="title">Popular Metal Albums</h1>
+          <AlbumList
+            className="albumList"
+            list={albums}
+            onVote={this.handleOnVote}
+            onDelete={this.handleOnDelete}
+          />
+          <NewSongForm
+            form={form}
+            errors={errors}
+            handeOnChange={this.handeOnChange}
+            handleOnSubmit={this.validateForm}
+          />
+        </div>
       </div>
     );
   }

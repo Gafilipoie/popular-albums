@@ -1,4 +1,15 @@
+.styledInput input {
+  padding: 6px 8px;
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid #80808061;
+}
+
+.styledInput input::placeholder {
+  color: #6e6c6cde;
+}
+
 .styledInput .input-error {
   margin-left: 6px;
-  color: red;
+  color: #ff4f4f;
 }

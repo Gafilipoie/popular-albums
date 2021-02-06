@@ -1,3 +1,13 @@
+.styledNewSongForm {
+  padding-left: 12px;
+}
+
+.styledNewSongForm .form-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 400;
+}
+
 .styledNewSongForm .form-input {
   display: block;
   margin-bottom: 6px;

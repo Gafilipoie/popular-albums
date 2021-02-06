@@ -1,37 +1,54 @@
 .styledAlbum {
   display: flex;
+  justify-content: space-between;
 }
 
-.albumCoverUrl {
+.styledAlbum .albumCoverUrl {
   margin-right: 24px;
 }
 
-.details .details-info {
+.styledAlbum .details {
+  flex: 1;
+}
+
+.styledAlbum .details .details-info {
   margin: 8px 0;
+  user-select: none;
 }
 
-.details .details-info .albumName {
-  color: blue;
+.styledAlbum .details .details-info .albumName a {
+  color: #7b7bff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.styledAlbum .details .details-info .albumName a:hover {
+  color: #5c5cfe;
+}
+
+.styledAlbum .details .details-info .brandName {
   font-weight: bold;
 }
 
-.details .details-info .brandName {
-  font-weight: bold;
+.styledAlbum .details .details-by {
+  color: #808080;
+  user-select: none;
 }
 
-.details .details-by {
-  color: grey;
-}
-
-.details .details-by span{
+.styledAlbum .details .details-by span{
   margin-right: 8px;
 }
 
-.details .details-by img{
+.styledAlbum .details .details-by img{
   border-radius: 50%;
   vertical-align: middle;
 }
 
-.icon-remove {
-  color: grey;
+.styledAlbum .icon-remove {
+  color: #808080;
+  cursor: pointer;
+}
+
+.styledAlbum .icon-remove:hover {
+  color: #a7a7a7;
 }

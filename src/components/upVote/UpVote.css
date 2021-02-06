@@ -1,11 +1,15 @@
 .styledUpVote .icon-caret-up {
   margin-right: 6px;
-  color: blue;
+  color: #7b7bff;
   font-size: 22px;
   cursor: pointer;
+}
+.styledUpVote .icon-caret-up:hover {
+  color: #5c5cfe;
 }
 
 .styledUpVote .votes {
   font-size: 22px;
   font-weight: bold;
+  user-select: none;
 }
